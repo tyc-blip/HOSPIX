@@ -1,0 +1,26 @@
+{
+    "scripts": {
+        "build": "cd src/frontend && VITE_CANISTER_ORIGIN=http://$(dfx canister id backend).localhost:8000 vite build",
+        "pretest": "tsx test/pretest.ts",
+        "test": "jest",
+        "install-dfx": "sh -ci \"$(curl -fsSL https://internetcomputer.org/install.sh)\"",
+        "source-env": ". \"$HOME/.local/share/dfx/env\"",
+        "install-deps": "npm install",
+        "install-vite": "npm install vite --save-dev",
+        "install-azle": "npm install azle",
+        "setup": "npm run install-dfx && npm run source-env && npm run install-deps && npm run install-vite && npm run install-azle"
+    },
+    "dependencies": {
+        "azle": "^0.24.1",
+        "express": "^4.21.1",
+        "lit": "^3.2.0"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.21",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.1.4",
+        "tsx": "^4.15.7",
+        "typescript": "^5.2.2",
+        "vite": "^5.4.11"
+    }
+}
